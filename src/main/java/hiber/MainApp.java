@@ -37,7 +37,7 @@ public class MainApp {
       userService.add(user1);
       userService.add(user2);*/
 
-      //userService.removeUserById(2);
+      //userService.removeUserById(1);
 
       User userDb = userService.getUserByModel("Ford");
       System.out.println("Id = " + userDb.getId());
