@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 @Repository
@@ -19,6 +20,10 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public void add(User user) {
+      List<Car> cars = user.getCar();
+      for (Car t : cars) {
+         t.setUser(user);
+      }
       sessionFactory.getCurrentSession().save(user);
    }
 
@@ -43,7 +48,10 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public void removeUserById(long id) {
-      sessionFactory.getCurrentSession().createQuery("delete from User where id = :id").setParameter("id", id).executeUpdate();
+      Session session = sessionFactory.getCurrentSession();
+      User user = (User) session.createQuery("from User where id = :id").setParameter("id", id).uniqueResult();
+      session.delete(user);
+
    }
 
 

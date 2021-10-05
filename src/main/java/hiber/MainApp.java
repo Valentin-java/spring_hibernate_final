@@ -17,40 +17,33 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
-
-      Car car1 = new Car("Ford", 111);
+      /*Car car1 = new Car("Ford", 111);
       Car car2 = new Car("BMW", 2222);
       Car car3 = new Car("KIA", 3333);
       Car car4 = new Car("Dodge", 4444);
 
-      User user1  = new User("User1", "Lastname1", "user1@mail.ru", car1);
-      car1.setUser(user1);
-      User user2 = new User("User2", "Lastname2", "user2@mail.ru", car2);
-      car2.setUser(user2);
-      User user3  = new User("User3", "Lastname3", "user3@mail.ru", car3);
-      car3.setUser(user3);
-      User user4 = new User("User4", "Lastname4", "user4@mail.ru", car4);
-      car4.setUser(user4);
+      List<Car> listCars1 = new ArrayList<>();
+      listCars1.add(car1);
+      listCars1.add(car2);
 
-      /*userService.add(user1);
-      userService.add(user2);
-      userService.add(user3);
-      userService.add(user4);*/
+      List<Car> listCars2 = new ArrayList<>();
+      listCars2.add(car3);
+      listCars2.add(car4);
 
 
-      /*System.out.println(userService.getUserByModel("Ford"));
-      System.out.println(userService.getUserByModel("BMW"));
-      System.out.println(userService.getUserByModel("KIA"));
-      System.out.println(userService.getUserByModel("Dodge"));*/
+      User user1  = new User("User1", "Lastname1", "user1@mail.ru", listCars1);
+      User user2 = new User("User2", "Lastname2", "user2@mail.ru", listCars2);
 
-      String carModel = "Dodge";
-      User userData = userService.getUserByModel(carModel);
-      System.out.println();
-      System.out.println("Owner of Car = " + carModel);
-      System.out.println("Id = " + userData.getId());
-      System.out.println("First Name = "+userData.getFirstName());
-      System.out.println("Last Name = "+userData.getLastName());
-      System.out.println("Email = "+userData.getEmail());
+      userService.add(user1);
+      userService.add(user2);*/
+
+      //userService.removeUserById(2);
+
+      User userDb = userService.getUserByModel("Ford");
+      System.out.println("Id = " + userDb.getId());
+      System.out.println("First Name = " + userDb.getFirstName());
+      System.out.println("Last Name = " + userDb.getLastName());
+      System.out.println("Email = " + userDb.getEmail());
       System.out.println();
 
 
