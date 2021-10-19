@@ -39,7 +39,7 @@ public class MainApp {
 
       //userService.removeUserById(1);
 
-      User userDb = userService.getUserByModel("Ford");
+      User userDb = userService.getUserByModel("Ford", 111);
       System.out.println("Id = " + userDb.getId());
       System.out.println("First Name = " + userDb.getFirstName());
       System.out.println("Last Name = " + userDb.getLastName());
