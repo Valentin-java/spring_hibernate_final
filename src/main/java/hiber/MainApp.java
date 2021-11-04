@@ -16,8 +16,8 @@ public class MainApp {
             new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
-
-      /*Car car1 = new Car("Ford", 111);
+/*
+      Car car1 = new Car("Ford", 111);
       Car car2 = new Car("BMW", 2222);
       Car car3 = new Car("KIA", 3333);
       Car car4 = new Car("Dodge", 4444);
@@ -48,14 +48,14 @@ public class MainApp {
 
 
 
-      List<User> users = userService.listUsers();
+      /*List<User> users = userService.listUsers();
       for (User user : users) {
          System.out.println("Id = "+user.getId());
          System.out.println("First Name = "+user.getFirstName());
          System.out.println("Last Name = "+user.getLastName());
          System.out.println("Email = "+user.getEmail());
          System.out.println();
-      }
+      }*/
 
       context.close();
    }
