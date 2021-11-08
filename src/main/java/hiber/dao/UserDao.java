@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserDao {
    void add(User user);
    List<User> listUsers();
-   User getUserByModel(String model, int series);
+   User getUserByModelAndSeries(String model, int series);
    void cleanDb();
    void removeUserById(long id);
 }
